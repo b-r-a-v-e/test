@@ -1,0 +1,5 @@
+new Thread1 broadcast enabled
+setup Thread1 input rtsp://192.168.1.10:554/user=admin_password=_channel=1_stream=1.sdp?real_stream-sout-rtp-caching=15000
+setup Thread1 output #transcode{vcodec=mjpg,vb=3500,scale=1.0,fps=25,acodec=none}:standard{access=http{mime=multipart/x-mixed-replace;boundary=7b3cc56e5f51db803f790dad720ed50a},mux=mpjpeg,dst=192.168.1.101:17200/videostream.cgi}
+
+control Thread1 play
